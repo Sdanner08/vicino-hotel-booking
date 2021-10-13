@@ -18,51 +18,25 @@
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
-		<!--tag::webflux-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!--end::webflux-->
-		<!--tag::gateway-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway</artifactId>
-		</dependency>
-		<!--end::gateway-->
-		<!--tag::eureka-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-		<!--end::eureka-->
-		<!--tag::spring-kafka-->
+
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
-		<!--end::spring-kafka-->
-		<!--tag::spring-starter-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--end::spring-starter-->
-		<!--tag::reactor-test-->
-		<dependency>
-			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!--end::reactor-test-->
-		<!--tag::kafka-test-->
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!--end::kafka-test-->
 	</dependencies>
 
 	<dependencyManagement>
