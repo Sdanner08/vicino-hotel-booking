@@ -12,4 +12,7 @@ public class VicinoApplication {
 		SpringApplication.run(VicinoApplication.class, args);
 	}
 
+
+	//https://github.com/eugenp/tutorials/tree/master/spring-kafka
+	//https://www.baeldung.com/spring-kafka
 }
