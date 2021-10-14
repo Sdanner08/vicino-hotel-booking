@@ -1,4 +1,4 @@
-/*package com.revature.vicino.models;
+package com.revature.location.find.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Location {
-    //location id
-    //location name?
-}*/
+public class City {
+    Integer locationId;
+}
