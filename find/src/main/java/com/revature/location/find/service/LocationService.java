@@ -32,17 +32,17 @@ public class LocationService {
        // System.out.println(response);
         City city = new City();
 
-        JSONObject obj = new JSONObject(response.getBody());
+        //JSONObject obj = new JSONObject(response.getBody());
 
       //  System.out.println(response.getBody());
-        System.out.println(obj);
-        JSONArray arr = obj.getJSONArray("data");
+        //System.out.println(obj);
+        //JSONArray arr = obj.getJSONArray("data");
 
       //  System.out.println(arr.toString());
-        for (int i = 0; i < arr.length(); i++) {
-            JSONObject o = arr.getJSONObject(i);
+        //for (int i = 0; i < arr.length(); i++) {
+            //JSONObject o = arr.getJSONObject(i);
           //  System.out.println(arr.length() + "    " + o);
-        }
+        //}
 
         /*Integer cityLocationId = response.getBody().getObject();*/
 /*        city.setLocationId(1);
@@ -57,7 +57,17 @@ public class LocationService {
 
        // "data" : { "Typeahead_autocomplete" : { "results" : [ { "detailsV2" : { "locationId" : 34438,
 
+        JSONObject obj = new JSONObject(response.getBody());
 
+        JSONArray arr = obj.getJSONArray("data");
+
+        JSONObject o = arr.getJSONObject(0);
+
+        JSONObject o1 = o.getJSONObject("result_object");
+
+        System.out.println(o1.get("location_id"));
+
+        city.setLocationId(Integer.parseInt(o1.get("location_id").toString()));
 
         return city;
     }
