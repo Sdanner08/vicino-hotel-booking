@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 import java.io.IOException;
 @RestController("locationController")
@@ -22,8 +23,8 @@ public class LocationController {
     }
 
     @GetMapping("{cityName}")
-    public City getLocationId(@PathVariable String cityName) throws IOException, UnirestException {
+    public Mono<City> getLocationId(@PathVariable String cityName) throws IOException, UnirestException {
         City city = this.locationService.location(cityName);
-        return city;
+        return Mono.just(city);
     }
 }

@@ -12,4 +12,8 @@ public class HotelRequest {
     private Integer adults;
     private Integer numOfRooms;
     private Integer numOfNights;
+
+    public HotelRequest(Integer locationId) {
+        this.locationId = locationId;
+    }
 }
