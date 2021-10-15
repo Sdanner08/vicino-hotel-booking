@@ -15,9 +15,9 @@ public class LocationService {
 
 
     public City location(String cityName) throws IOException, UnirestException {
-        HttpResponse<String> response = Unirest.get("https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query="+ cityName+"&lang=en_US&units=km")
+        HttpResponse<String> response = Unirest.get("https://travel-advisor.p.rapidapi.com/locations/search?query=" + cityName + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US")
                 .header("x-rapidapi-host", "travel-advisor.p.rapidapi.com")
-                .header("x-rapidapi-key", "a3582833c4mshe7ab93b1542c50bp186450jsn34d6409641ab")
+                .header("x-rapidapi-key", "49ef9cf13amshcb219f25e45e584p1a7c60jsnced9cf978f2e")
                 .asString();
 
         City city = new City();
