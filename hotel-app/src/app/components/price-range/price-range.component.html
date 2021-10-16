@@ -1,3 +1,8 @@
-<label for="priceRange" class="form-label">Price/night</label>
-<p>${{range}}</p>
-<input type="range" class="form-range" min="0" max="600" step="5" id="priceRange" [(ngModel)]="range">
+<div class="price-container">
+    <div class="price">
+        <label for="priceRange" class="form-label">Price/night: </label>
+        <p id = "amount"> ${{range}}</p>
+    </div>
+    
+    <input type="range" class="form-range" min="0" max="600" step="5" id="priceRange" [(ngModel)]="range">
+</div>

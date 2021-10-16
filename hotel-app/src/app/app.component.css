@@ -1,0 +1,31 @@
+.selection-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 8rem;
+}
+.price-date{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+}
+.price-range{
+    width:35%;
+}
+.date-select{
+    width:35%;
+    padding-left: 1rem;
+}
+.main-cont{
+    display: flex;
+    width:100%;
+}
+.map-container{
+    margin: 1rem;
+}
+agm-map {
+    height: 500px;
+    width: 100%;
+   /*  right: 0;
+    position: fixed; */
+}

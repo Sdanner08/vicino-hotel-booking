@@ -7,11 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PriceRangeComponent implements OnInit {
   @Input()
-  range:number = 0;
+  range:number = 300;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

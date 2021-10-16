@@ -1,4 +1,14 @@
+.price-container{
+    width: 100%;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+#amount{
+    text-align: right;
+}
 .form-range{
     margin: 0.5rem;
-    width: 80rem;
+    width: 100%;
 }

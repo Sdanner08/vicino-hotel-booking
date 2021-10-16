@@ -1,8 +1,12 @@
 .input-group{
-    margin: .5rem;
-    width: 50rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .marker{
     margin: .4rem;
     font-size:x-large;
+}
+.search-bar{
+    display: flex;
 }
