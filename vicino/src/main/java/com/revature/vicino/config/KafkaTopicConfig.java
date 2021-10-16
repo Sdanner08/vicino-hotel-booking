@@ -1,3 +1,4 @@
+/*
 package com.revature.vicino.config;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
@@ -28,3 +29,4 @@ public class KafkaTopicConfig {
         return new NewTopic("baeldung", 1, (short) 1);
     }
 }
+*/

@@ -21,7 +21,7 @@ public class HotelInfoController{
         client.close();
     }
 
-    public void location() throws IOException{
+/*    public void location() throws IOException{
         AsyncHttpClient client = new DefaultAsyncHttpClient();
         client.prepare("GET", "https://travel-advisor.p.rapidapi.com/locations/search?query=Waxhaw&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US")
                 .setHeader("x-rapidapi-host", "travel-advisor.p.rapidapi.com")
@@ -32,5 +32,5 @@ public class HotelInfoController{
                 .join();
 
         client.close();
-    }
+    }*/
 }
