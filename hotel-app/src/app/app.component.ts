@@ -1,7 +1,7 @@
 import { MapsAPILoader} from '@agm/core';
 import { Component, ElementRef, NgZone, ViewChild, OnInit } from '@angular/core';
-import { HotelService } from './services/hotel.service';
-import { VariablesService } from './services/variables.service';
+import { HotelService } from './services/hotel/hotel.service';
+import { VariablesService } from './services/variables/variables.service';
 
 @Component({
   selector: 'app-root',

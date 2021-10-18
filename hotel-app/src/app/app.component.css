@@ -28,6 +28,7 @@
 .main-cont{
     padding-top: 10rem;
     display: flex;
+   /*  flex-direction: column; */
     flex-wrap: wrap;
     width:100%;
     /* overflow: scroll; */
@@ -35,22 +36,30 @@
 .map-container{
     margin-top: 4rem;
     margin-left: 1rem;
-    overflow: hidden;
-    display: block;
-    position: fixed;
+    /* overflow: hidden; */
+    /* display:static; */
+    height: 30rem;
+    width: 35rem;
+    /* position: fixed; */
     /* margin: 1rem; */
+}
+/* .form-group{
+    position: fixed;
+} */
+.map{
+    position: fixed;
 }
 agm-map {
     height: 30rem;
     width: 35rem;
     z-index: -1;
-   /*  right: 0;
-    position: fixed; */
+   
 }
 
 .hotels-container{
     margin-top: 4rem;
-    margin-left: 45rem;
+    margin-left: 3rem;
+    /* margin-left: 45rem; */
     display: flex;
     justify-content: space-around;
 }

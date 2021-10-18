@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { VariablesService } from 'src/app/services/variables.service';
+import { VariablesService } from 'src/app/services/variables/variables.service';
 
 @Component({
   selector: 'app-room-form',

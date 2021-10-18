@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelService } from 'src/app/services/hotel.service';
+import { HotelService } from 'src/app/services//hotel/hotel.service';
 
 @Component({
   selector: 'app-location-input',

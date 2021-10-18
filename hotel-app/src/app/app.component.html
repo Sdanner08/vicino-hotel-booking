@@ -20,6 +20,7 @@
 
        <!--  <h1>Angular Google Maps with Places Search Example</h1>
        -->
+       <div class="map">
         <div class="form-group">
           <label>Enter Location</label>
           <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
@@ -29,10 +30,11 @@
           <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
             (dragEnd)="markerDragEnd($event)"></agm-marker>
         </agm-map>
+        </div>
       
-        <h5>Address: {{address}}</h5>
+        <!-- <h5>Address: {{address}}</h5>
         <div>Latitude: {{latitude}}</div>
-        <div>Longitude: {{longitude}}</div>
+        <div>Longitude: {{longitude}}</div> -->
     </div>
 
     <!-- app.component.html -->
