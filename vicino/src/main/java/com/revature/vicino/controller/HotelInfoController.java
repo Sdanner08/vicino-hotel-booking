@@ -49,8 +49,9 @@ public class HotelInfoController{
                 "adults="+hotelRequest.getAdults()+
                 "1&amenities=beach%2Cbar_lounge%2Cairport_transportation&rooms="+hotelRequest.getNumOfRooms()+
                 "&child_rm_ages=7%2C10&currency=USD&" +
-                "checkin="+"2022-01-08"+
-                "&zff=4%2C6&subcategory=hotel%2Cbb%2Cspecialty&nights=2")
+                "checkin="+hotelRequest.getCheckinYear()+"-"+hotelRequest.getCheckinMonth()+"-"+hotelRequest.getCheckinDay()+
+                "&zff=4%2C6&subcategory=hotel%2Cbb%2Cspecialty&" +
+                "nights="+hotelRequest.getNumOfNights())
 
                 .header("x-rapidapi-host", "travel-advisor.p.rapidapi.com")
                 .header("x-rapidapi-key", "a3582833c4mshe7ab93b1542c50bp186450jsn34d6409641ab")
