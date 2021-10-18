@@ -14,7 +14,7 @@ import java.io.IOException;
 
 @RestController("bookingController")
 public class HotelInfoController{
-    @PostMapping
+    @PostMapping("Blah")
     public Mono<String> getInfo(@RequestBody HotelRequest hotelRequest) throws IOException, UnirestException {
         StringBuilder beginning = new StringBuilder("https://travel-advisor.p.rapidapi.com/hotels/list?location_id=");
         StringBuilder end = new StringBuilder("&offset=0&currency=USD&order=asc&limit=30&sort=recommended&lang=en_US");
@@ -41,7 +41,7 @@ public class HotelInfoController{
         return Mono.just(response.getBody());
     }
 
-    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @PostMapping()
     public Mono<String> getInfoLL(@RequestBody HotelRequest hotelRequest) throws IOException, UnirestException {
         HttpResponse<String> response = Unirest.get("https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng?latitude="
                 +hotelRequest.getLatitude()+
@@ -52,11 +52,13 @@ public class HotelInfoController{
                 "checkin="+hotelRequest.getCheckinYear()+"-"+hotelRequest.getCheckinMonth()+"-"+hotelRequest.getCheckinDay()+
                 "&zff=4%2C6&subcategory=hotel%2Cbb%2Cspecialty&" +
                 "nights="+hotelRequest.getNumOfNights())
+//        HttpResponse<String> response = Unirest.get("https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng?latitude="
+//                +hotelRequest.getLatitude()+
+//                "&longitude="+hotelRequest.getLongitude())
 
                 .header("x-rapidapi-host", "travel-advisor.p.rapidapi.com")
                 .header("x-rapidapi-key", "a3582833c4mshe7ab93b1542c50bp186450jsn34d6409641ab")
                 .asString();
-
         return Mono.just(response.getBody());
     }
 
