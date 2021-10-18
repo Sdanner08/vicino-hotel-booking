@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelService } from 'src/app/services/hotel.service';
 
 @Component({
   selector: 'app-location-input',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationInputComponent implements OnInit {
 
-  constructor() { }
+  constructor(private hotelService: HotelService) { }
 
   ngOnInit(): void {
+  }
+
+  findHotels() {
+    this.hotelService.getHotelInfo
   }
 
 }

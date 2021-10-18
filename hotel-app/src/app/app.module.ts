@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { HotelAdComponent } from './components/hotel-ad/hotel-ad.component';
 import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HotelsListComponent } from './components/hotels-list/hotels-list.compon
     BrowserModule,
     NgbModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBfnx_hhyeBK6NYgMHxJlBCZWRm33zSgWU',
