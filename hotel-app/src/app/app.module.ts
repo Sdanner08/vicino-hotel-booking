@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PriceRangeComponent } from './components/price-range/price-range.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoomFormComponent } from './components/room-form/room-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RoomFormComponent } from './components/room-form/room-form.component';
     BrowserModule,
     NgbModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBfnx_hhyeBK6NYgMHxJlBCZWRm33zSgWU',

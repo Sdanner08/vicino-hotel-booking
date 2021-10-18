@@ -1,5 +1,7 @@
 import { MapsAPILoader} from '@agm/core';
 import { Component, ElementRef, NgZone, ViewChild, OnInit } from '@angular/core';
+import { HotelService } from './services/hotel.service';
+import { VariablesService } from './services/variables.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,9 @@ export class AppComponent {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private hotelService: HotelService,
+    private variable: VariablesService
   ) { }
 
 
@@ -85,6 +89,12 @@ export class AppComponent {
       }
 
     });
+  }
+
+  findHotels() {
+    this.hotelService.getHotelInfo(12.91285, 100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(), 2, 2021, 12, 14).subscribe(data => {
+      console.log(data);
+    })
   }
 
 }

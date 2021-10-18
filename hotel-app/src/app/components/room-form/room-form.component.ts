@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { VariablesService } from 'src/app/services/variables.service';
 
 @Component({
   selector: 'app-room-form',
@@ -9,9 +10,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class RoomFormComponent implements OnInit {
 
   @Input()
-  adultNum:number=0;
-  childNum:number=0;
-  roomNum:number=0;
+  public adultNum:number=0;
+  public childNum:number=0;
+  public roomNum:number=0;
   
   
   roomguestForm = this.fb.group({
@@ -19,7 +20,7 @@ export class RoomFormComponent implements OnInit {
     children: [null],
     rooms: [null]
   })
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private variable: VariablesService) { }
 
   ngOnInit(): void {
   }
@@ -44,6 +45,8 @@ export class RoomFormComponent implements OnInit {
         this.roomNum -= 1;
       }
     }
+
+    this.variable.setAdultAndRoom(this.adultNum, this.roomNum);
   }
 
   add(type: string){
@@ -54,6 +57,8 @@ export class RoomFormComponent implements OnInit {
     }else {
       this.roomNum += 1;
     }
+
+    this.variable.setAdultAndRoom(this.adultNum, this.roomNum);
   }
   
 }
