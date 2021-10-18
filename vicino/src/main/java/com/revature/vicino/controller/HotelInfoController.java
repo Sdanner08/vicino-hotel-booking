@@ -3,19 +3,13 @@ package com.revature.vicino.controller;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.revature.vicino.VicinoApplication;
 import com.revature.vicino.models.HotelRequest;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import reactor.core.publisher.Mono;
-
 import java.io.IOException;
-import java.util.Date;
+
 
 @RestController("bookingController")
 public class HotelInfoController{
