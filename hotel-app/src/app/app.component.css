@@ -1,13 +1,21 @@
+/* .nav{
+    width: 100%;
+    height: max-content;
+} */
 .selection-container{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    height: 8rem;
+    /* height: 10rem; */
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
 }
 .price-date{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    position: fixed;
 }
 .price-range{
     width:35%;
@@ -19,13 +27,18 @@
 .main-cont{
     display: flex;
     width:100%;
+    /* overflow: scroll; */
 }
 .map-container{
-    margin: 1rem;
+    margin-top: 14rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    /* margin: 1rem; */
 }
 agm-map {
-    height: 500px;
-    width: 100%;
+    height: 30rem;
+    width: 35rem;
+    z-index: -1;
    /*  right: 0;
     position: fixed; */
 }
