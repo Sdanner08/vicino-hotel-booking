@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbDate, NgbCalendar, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
+import { VariablesService } from 'src/app/services/variables.service';
 
 
 @Component({
@@ -38,9 +39,10 @@ export class DateSelectComponent implements OnInit {
   fromDate: NgbDate | null;
   toDate: NgbDate | null;
 
-  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
+  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private variable: VariablesService) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.variable.setDateAndDays(this.fromDate, this.toDate);
   }
   ngOnInit(): void {
   }
@@ -53,6 +55,9 @@ export class DateSelectComponent implements OnInit {
     } else {
       this.toDate = null;
       this.fromDate = date;
+    }
+    if (this.toDate != null && this.fromDate != null) {
+      this.variable.setDateAndDays(this.fromDate, this.toDate);
     }
   }
 

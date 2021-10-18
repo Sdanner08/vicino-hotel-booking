@@ -1,7 +1,15 @@
 package com.revature.vicino.models;
 
-public class HotelModel {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class HotelModel {
+    private Integer lat;
+    private Integer lng;
     /*
     * start date
     * end date

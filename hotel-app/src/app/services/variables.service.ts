@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {NgbDate, NgbRadio} from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ export class VariablesService {
   adultNum: number = 0;
   roomNum: number = 0;
 
-  numOfNights: number = 1;
-  date: number = 0;
+  numOfNights: NgbDate;
+  date: NgbDate;
 
   setAdultAndRoom(adult: number, room: number) {
     this.adultNum = adult;
@@ -25,16 +26,16 @@ export class VariablesService {
     return this.roomNum;
   }
 
-  setDateAndDays(nights: number, date: number) {
+  setDateAndDays(nights: NgbDate, date: NgbDate) {
     this.numOfNights = nights;
     this.date = date;
   }
 
-  getNumOfNights() : number {
+  getNumOfNights() : NgbDate {
     return this.numOfNights;
   }
 
-  getDate() : number {
+  getDate() : NgbDate {
     return this.date;
   }
 }

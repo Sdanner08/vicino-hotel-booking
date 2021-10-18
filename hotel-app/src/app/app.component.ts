@@ -92,8 +92,9 @@ export class AppComponent {
   }
 
   findHotels() {
-    this.hotelService.getHotelInfo(12.91285, 100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(), 2, 2021, 12, 14).subscribe(data => {
-      console.log(data);
+    this.hotelService.getHotelInfo(12.91285, 100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(), 2,
+      this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+    console.log(data);
     })
   }
 
