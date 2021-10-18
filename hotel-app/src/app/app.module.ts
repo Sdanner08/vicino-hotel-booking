@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PriceRangeComponent } from './components/price-range/price-range.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoomFormComponent } from './components/room-form/room-form.component';
+import { HotelAdComponent } from './components/hotel-ad/hotel-ad.component';
+import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RoomFormComponent } from './components/room-form/room-form.component';
     LocationInputComponent,
     DateSelectComponent,
     PriceRangeComponent,
-    RoomFormComponent
+    RoomFormComponent,
+    HotelAdComponent,
+    HotelsListComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@
 } */
 .selection-container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
     /* height: 10rem; */
@@ -25,14 +26,18 @@
     padding-left: 1rem;
 }
 .main-cont{
+    padding-top: 10rem;
     display: flex;
+    flex-wrap: wrap;
     width:100%;
     /* overflow: scroll; */
 }
 .map-container{
-    margin-top: 14rem;
+    margin-top: 4rem;
     margin-left: 1rem;
     overflow: hidden;
+    display: block;
+    position: fixed;
     /* margin: 1rem; */
 }
 agm-map {
@@ -41,4 +46,11 @@ agm-map {
     z-index: -1;
    /*  right: 0;
     position: fixed; */
+}
+
+.hotels-container{
+    margin-top: 4rem;
+    margin-left: 45rem;
+    display: flex;
+    justify-content: space-around;
 }
