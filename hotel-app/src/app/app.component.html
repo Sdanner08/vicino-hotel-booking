@@ -1,4 +1,54 @@
-<app-navbar></app-navbar>
-<app-location-input></app-location-input>
-<app-date-select></app-date-select>
-<app-price-range></app-price-range>
+<div class="selection-container">
+    <app-navbar></app-navbar>
+    
+    <div class="price-date">
+        <div class="date-select">
+            <app-date-select></app-date-select>
+        </div>
+        <div class="price-range">
+            <app-price-range></app-price-range>
+        </div>
+        
+    <app-room-form></app-room-form>
+    </div>
+    <hr>
+</div>
+
+<div class="main-cont">
+
+    <div class="map-container">
+
+       <!--  <h1>Angular Google Maps with Places Search Example</h1>
+       -->
+       <div class="map">
+        <div class="form-group">
+          <label>Enter Location</label>
+          <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+        </div>
+      
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+          <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+            (dragEnd)="markerDragEnd($event)"></agm-marker>
+        </agm-map>
+        </div>
+      
+        <!-- <h5>Address: {{address}}</h5>
+        <div>Latitude: {{latitude}}</div>
+        <div>Longitude: {{longitude}}</div> -->
+    </div>
+
+    <!-- app.component.html -->
+   <!--  <agm-map 
+    [latitude]="latitude" 
+    [longitude]="longitude" 
+    [zoom]="zoom" >
+      <agm-marker 
+      [latitude]="latitude" 
+      [longitude]="longitude"></agm-marker>
+    </agm-map> -->
+    <div class="hotels-container">
+        <app-hotels-list></app-hotels-list>
+    </div>
+    
+</div>
+<button (click)="findHotels()">Find Hotels</button>
