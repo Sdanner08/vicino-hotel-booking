@@ -1,0 +1,65 @@
+/* .nav{
+    width: 100%;
+    height: max-content;
+} */
+.selection-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* height: 10rem; */
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+}
+.price-date{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.price-range{
+    width:35%;
+}
+.date-select{
+    width:35%;
+    padding-left: 1rem;
+}
+.main-cont{
+    padding-top: 10rem;
+    display: flex;
+   /*  flex-direction: column; */
+    flex-wrap: wrap;
+    width:100%;
+    /* overflow: scroll; */
+}
+.map-container{
+    margin-top: 4rem;
+    margin-left: 1rem;
+    /* overflow: hidden; */
+    /* display:static; */
+    height: 30rem;
+    width: 35rem;
+    /* position: fixed; */
+    /* margin: 1rem; */
+}
+/* .form-group{
+    position: fixed;
+} */
+.map{
+    position: fixed;
+}
+agm-map {
+    height: 30rem;
+    width: 35rem;
+    z-index: -1;
+   
+}
+
+.hotels-container{
+    margin-top: 4rem;
+    margin-left: 3rem;
+    /* margin-left: 45rem; */
+    display: flex;
+    justify-content: space-around;
+}

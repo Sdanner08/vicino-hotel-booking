@@ -1,0 +1,54 @@
+<div class="form-container">
+    <form ><!-- [formGroup]="roomguestForm" -->
+      <div class="selections">
+        <div class="form-row">
+          <label for="adults">Adults:</label>
+          <button id="numBtn" type="button" class="btn btn-info adultMinus " (click) = "subtract('adult')">-</button>
+            <h4 id = "num" class="adultNum">{{adultNum}}</h4>
+          <button id="numBtn" type="button" class="btn btn-warning adultPlus" (click) = "add('adult')">+</button>
+          <!-- <div class="warn">
+            <ng-container>
+              <div
+                class="invalid"
+                *ngIf="
+                  username.hasError('required') &&
+                  (username.dirty || username.touched)
+                "
+              >
+                Username cannot be empty
+              </div>
+            </ng-container>
+          </div> -->
+        </div>
+       <!--  <div class="form-row">
+            <label for="children">Children:</label>
+            <button id="numBtn" type="button" class="btn btn-info childMinus" (click) = "subtract('child')">-</button>
+              <h4 id = "num" class="childNum">{{childNum}}</h4>
+            <button id="numBtn" ype="button" class="btn btn-warning childPlus" (click) = "add('child')">+</button> -->
+          <!-- <div class="warn">
+            <ng-container>
+              <div
+                *ngIf="
+                  password.hasError('required') &&
+                  (password.dirty || password.touched)
+                "
+              >
+                Password cannot be empty
+              </div>
+            </ng-container>
+          </div> -->
+        <!-- </div> -->
+        <div class="form-row">
+            <label for="rooms">Rooms:</label>
+            <button id="numBtn" type="button" class="btn btn-info roomMinus" (click) = "subtract('room')">-</button>
+              <h4 id = "num" class="roomNum">{{roomNum}}</h4>
+            <button id="numBtn" ype="button" class="btn btn-warning roomPlus" (click) = "add('room')">+</button>
+        </div>
+  </div>
+        <div class="roomBtn">
+          <button type="button" class="btn btn-primary applyBtn">Apply</button>
+        </div>
+  
+        <!-- <a class="forgot" (click)="toggleForm('forgot')">Forgot password?</a> -->
+      </form>
+</div>

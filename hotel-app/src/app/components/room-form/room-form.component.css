@@ -1,0 +1,35 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: max-content;
+    height: max-content;
+    padding: .7rem;
+    border-radius: 1.6rem;
+    box-shadow: rgba(149, 157, 165, 0.679) 0px 5px 18px;
+  }
+  form{
+      display: flex;
+  }
+label{
+    width: 5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: .3rem;
+}
+#numBtn{
+    border-radius: 50%;
+    font-weight: bolder;
+    margin: .3rem;
+}
+#num{
+    width: 2rem;
+    text-align: center;
+}
+
+.form-row{
+    margin: .3rem;
+}
+.roomBtn{
+    justify-content: center;
+    padding-top: 1rem;
+}
