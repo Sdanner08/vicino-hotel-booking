@@ -8,10 +8,10 @@ import { DateSelectComponent } from './components/date-select/date-select.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PriceRangeComponent } from './components/price-range/price-range.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RoomFormComponent } from './components/room-form/room-form.component';
 import { HotelAdComponent } from './components/hotel-ad/hotel-ad.component';
 import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RoomFormComponent } from './components/room-form/room-form.component';
 
 @NgModule({
   declarations: [

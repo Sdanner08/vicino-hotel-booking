@@ -1,7 +1,5 @@
-<h1>Hotels:</h1>
-<app-hotel-ad></app-hotel-ad>
-<app-hotel-ad></app-hotel-ad>
-<app-hotel-ad></app-hotel-ad>
-<app-hotel-ad></app-hotel-ad>
-<app-hotel-ad></app-hotel-ad>
-<app-hotel-ad></app-hotel-ad>
+<div class="container">
+    <div *ngFor="let hotel of hotels">
+        <app-hotel-ad [hotel] = "hotel"></app-hotel-ad>
+    </div>
+</div>
