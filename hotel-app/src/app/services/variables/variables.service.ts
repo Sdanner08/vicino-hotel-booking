@@ -13,6 +13,9 @@ export class VariablesService {
   numOfNights: NgbDate;
   date: NgbDate;
 
+  lat: number = 0;
+  lng: number = 0;
+
   setAdultAndRoom(adult: number, room: number) {
     this.adultNum = adult;
     this.roomNum = room;
@@ -37,5 +40,18 @@ export class VariablesService {
 
   getDate() : NgbDate {
     return this.date;
+  }
+
+  setLatAndLong(lat: number, lng: number) {
+    this.lat = lat;
+    this.lng = lng;
+  }
+
+  getLat() : number {
+    return this.lat;
+  }
+
+  getLng() : number {
+    return this.lng;
   }
 }

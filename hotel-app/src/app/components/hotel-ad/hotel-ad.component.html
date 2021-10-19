@@ -1,14 +1,18 @@
 
-<div class="card mb-3" style="max-width: 1000px;">
+<div class="card mb-3" style="max-width: 1000px;" *ngIf="_has">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="https://teamwaterbucket.s3.us-east-2.amazonaws.com/users/images/fish3.jpg" class="img-fluid rounded-start" alt="Picture from hotel">
+        <img [src]='hotel.photo.images.original.url' class="img-fluid rounded-start" alt="Picture from hotel">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <h5 class="card-title">{{hotel.name}}</h5>
+          <p class="card-text">{{hotel.ranking}}</p>
+          <p class="card-text"><small class="text-muted">{{hotel.rating}}/5 ({{hotel.num_reviews}} reviews)</small></p>
+          <h5 class="card-price">{{hotel.price}} </h5>
+          <div class="websiteBtn">
+            <button type="button" class="btn btn-primary applyBtn" (click)="book()">Visit Site to Book</button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HotelService } from 'src/app/services/hotel/hotel.service';
 import { VariablesService } from 'src/app/services/variables/variables.service';
+import { HotelsListComponent } from '../hotels-list/hotels-list.component';
 
 @Component({
   selector: 'app-room-form',
@@ -14,13 +16,16 @@ export class RoomFormComponent implements OnInit {
   public childNum:number=0;
   public roomNum:number=0;
   
-  
+  hotels:any = [];
+
+  @Output() sendRefresh: EventEmitter<any> = new EventEmitter();
+
   roomguestForm = this.fb.group({
     adult: [null],
     children: [null],
     rooms: [null]
   })
-  constructor(private fb: FormBuilder, private variable: VariablesService) { }
+  constructor(private fb: FormBuilder, private variable: VariablesService, private hotelService: HotelService) { }
 
   ngOnInit(): void {
   }
@@ -61,4 +66,16 @@ export class RoomFormComponent implements OnInit {
     this.variable.setAdultAndRoom(this.adultNum, this.roomNum);
   }
   
+  apply(){
+    this.sendRefresh.emit();
+    //this.child.ngOnInit();
+    // this.hotelService.getHotelInfo(12.91285,100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(),
+    //   this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+    //   this.hotels = [];
+    //   data.data.forEach(element => {
+    //     this.hotels.push(element);
+    //   });/* 
+    //   console.log(data); */
+    // })
+  }
 }

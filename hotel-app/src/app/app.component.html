@@ -22,7 +22,8 @@
        -->
        <div class="map">
         <div class="form-group">
-          <label>Enter Location</label>
+          <!-- <label>Enter Location</label> -->
+          <button type="button" class="btn btn-primary applyBtn" (click)="refreshList()">Apply</button>
           <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
         </div>
       
@@ -32,8 +33,8 @@
         </agm-map>
         </div>
       
-        <!-- <h5>Address: {{address}}</h5>
-        <div>Latitude: {{latitude}}</div>
+        <!-- <h5>Address: {{address}}</h5> -->
+        <!-- <div>Latitude: {{latitude}}</div>
         <div>Longitude: {{longitude}}</div> -->
     </div>
 
@@ -46,14 +47,8 @@
       [latitude]="latitude" 
       [longitude]="longitude"></agm-marker>
     </agm-map> -->
-    <!-- <div class="hotels-container">
-        <app-hotels-list></app-hotels-list>
-    </div> -->
-    
+        <div class="hotels-container">
+            <app-hotels-list></app-hotels-list>
+        </div>
 </div>
-<button (click)="findHotels()">Find Hotels</button>
-<ul>
-    <li *ngFor="let hotel of hotels">
-      {{hotel.name}}
-    </li>
-  </ul>
+
