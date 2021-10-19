@@ -53,4 +53,16 @@ public class HotelInfoController{
         return Mono.just(response.getBody());
     }
 
+    @PostMapping("/s")
+    public Mono<String> getOnly(@RequestBody HotelRequest hotelRequest) throws UnirestException {
+        HttpResponse<String> response = Unirest.get("https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng?latitude="
+                +hotelRequest.getLatitude()+
+                "&longitude="+hotelRequest.getLongitude()+"&lang=en_US&hotel_class=1%2C2%2C3&limit=30&" + "adults="+hotelRequest.getAdults()
+                + "&rooms="+hotelRequest.getNumOfRooms())
+                .header("x-rapidapi-host", "travel-advisor.p.rapidapi.com")
+                .header("x-rapidapi-key", "a3582833c4mshe7ab93b1542c50bp186450jsn34d6409641ab")
+                .asString();
+        return Mono.just(response.getBody());
+    }
+
 }
