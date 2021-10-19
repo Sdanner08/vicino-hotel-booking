@@ -93,8 +93,15 @@ export class AppComponent {
   }
 
   findHotels() {
-    this.hotelService.getHotelInfo(12.91285, 100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(), 2,
-      this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+    // this.hotelService.getHotelInfo(12.91285, 100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(), 2,
+    //   this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+    //   this.hotels = [];
+    //   data.data.forEach(element => {
+    //     this.hotels.push(element);
+    //   });
+    //   console.log(data);
+    // })
+    this.hotelService.tryHotelInfo(this.latitude, this.longitude).subscribe(data => {
       this.hotels = [];
       data.data.forEach(element => {
         this.hotels.push(element);

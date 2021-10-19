@@ -37,4 +37,11 @@ export class HotelService {
   //     longitude: longitude
   //   }, {withCredentials: true})
   // }
+
+  tryHotelInfo(latitude: number, longitude: number) : Observable<any> {
+    return this.httpCli.post<any>(`http://localhost:9090/booking/s`, {
+      latitude: latitude,
+      longitude: longitude
+    }, {withCredentials: true})
+  }
 }
