@@ -1,5 +1,7 @@
 import { MapsAPILoader} from '@agm/core';
-import { Component, ElementRef, NgZone, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, ViewChild, OnInit, OnChanges, Output, EventEmitter, SimpleChange, SimpleChanges } from '@angular/core';
+import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
+//import { EventEmitter } from 'stream';
 import { HotelService } from './services/hotel/hotel.service';
 import { VariablesService } from './services/variables/variables.service';
 
@@ -8,7 +10,7 @@ import { VariablesService } from './services/variables/variables.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges {
   title = 'hotel-app';
   latitude: number;
   longitude: number;
@@ -16,10 +18,18 @@ export class AppComponent {
   address: string;
   private geoCoder;
   hotels: any = [];
+  wait: boolean = false;
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
+  @Output() refreshHotels: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild(HotelsListComponent) child
+
+  sendRefresh() {
+    this.refreshHotels.emit;
+  }
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
@@ -55,14 +65,21 @@ export class AppComponent {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+
   // Get Current Location Coordinates
   private setCurrentLocation() {
+    console.log("----------------------------------------")
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.zoom = 8;
         this.getAddress(this.latitude, this.longitude);
+        this.variable.setLatAndLong(this.latitude, this.longitude)
+        this.child.ngOnInit();
       });
     }
   }
@@ -78,6 +95,7 @@ export class AppComponent {
     this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
       console.log(results);
       console.log(status);
+      this.variable.setLatAndLong(latitude, longitude);
       if (status === 'OK') {
         if (results[0]) {
           this.zoom = 12;
@@ -88,7 +106,7 @@ export class AppComponent {
       } else {
         window.alert('Geocoder failed due to: ' + status);
       }
-
+      this.variable.setLatAndLong(this.latitude, this.longitude)
     });
   }
 
@@ -103,6 +121,11 @@ export class AppComponent {
       });
       /* console.log(data); */
     })
+  }
+
+  refreshList() {
+    this.variable.setLatAndLong(this.latitude, this.longitude);
+    this.child.ngOnInit();
   }
 
 }

@@ -16,8 +16,26 @@ export class HotelsListComponent implements OnInit {
     private variable: VariablesService) { }
 
   ngOnInit(): void {
-    this.hotelService.getHotelInfo(12.91285,100.87808, this.variable.getAdultNum(), this.variable.getRoomNum(),
+    //12.91285
+    //100.87808
+    console.log(this.variable.getLat())
+    console.log("Hello")
+    this.hotelService.getHotelInfo(this.variable.getLat(), this.variable.getLng(), this.variable.getAdultNum(), this.variable.getRoomNum(),
       this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+        console.log(data)
+      this.hotels = [];
+      data.data.forEach(element => {
+        this.hotels.push(element);
+      });
+    })
+  }
+
+  refresh() {
+    console.log(this.variable.getLat())
+    console.log("Hello")
+    this.hotelService.getHotelInfo(this.variable.getLat(), this.variable.getLng(), this.variable.getAdultNum(), this.variable.getRoomNum(),
+      this.variable.getDate().year.valueOf(), this.variable.getDate().month, this.variable.getDate().day, this.variable.getNumOfNights()).subscribe(data => {
+        console.log(data)
       this.hotels = [];
       data.data.forEach(element => {
         this.hotels.push(element);

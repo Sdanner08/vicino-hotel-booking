@@ -25,13 +25,20 @@ export class HotelAdComponent implements OnInit {
   longitude: number;
   adults: number;
   numOfRooms: number;
-
+  _has: boolean = true;
 
 
   constructor(private hotelServ: HotelService) { }
 
   ngOnInit(): void {
     console.log(this.hotel)
+    if (this.hotel.ad_position != null) {
+      this._has = false;
+      console.log("is true")
+    } else {
+      this._has = true;
+      console.log("is true")
+    }
   }
 
   book(){
